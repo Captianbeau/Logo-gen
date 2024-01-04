@@ -13,7 +13,7 @@ inquirer
         {
             type:'',
             message:'',
-            name:'shapes',
+            name:'shape',
         }, {
             type:'',
             message:'',
@@ -24,6 +24,15 @@ inquirer
             name:'font',
         },
     ])
-    .then((logoParts) =>
+    .then((logoParts) => {
+        const {lText,shape,color,font} = logoParts
+        if(shape == 'square'){
+
+        }else if(shape == 'circle'){
+
+        }else if(shape == 'triangle'){
+            
+        }
+    }
     console.log(logoParts)
     );
