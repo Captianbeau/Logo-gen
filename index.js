@@ -3,7 +3,9 @@
 
 const inquirer = require('inquirer');
 
-inquirer
+class Logo {};
+
+Logo.inquirer
     .prompt([
         {
             type:'input',
@@ -23,6 +25,8 @@ inquirer
             message:'',
             name:'font',
         },
+
+        
     ])
     .then((logoParts) => {
         const {lText,shape,color,font} = logoParts
@@ -33,6 +37,7 @@ inquirer
         }else if(shape == 'triangle'){
             
         }
-    }
+    },
     console.log(logoParts)
     );
+    module.exports = Logo;
