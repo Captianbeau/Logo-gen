@@ -1,43 +1,49 @@
 // if statements to make logos from the results of the questions (errors)
 // shapes:circle,square,triangle  colors, text, font
-
 const inquirer = require('inquirer');
+const fs = require(fs);
 
-class Logo {};
-
-Logo.inquirer
+inquirer
     .prompt([
         {
             type:'input',
-            message:'Type logo text.',
+            message:'Type three letters for your logo',
             name:'lText',
         },
         {
-            type:'',
-            message:'',
+            type:'list',
+            message:'Pick a shape',
+            choices:['square','circle','triangle'],
             name:'shape',
         }, {
-            type:'',
-            message:'',
-            name:'color',
+            type:'input',
+            message:'Type the shape color',
+            name:'sColor',
         }, {
-            type:'',
-            message:'',
-            name:'font',
+            type:'input',
+            message:'Type the font color',
+            name:'fColor',
         },
-
-        
     ])
-    .then((logoParts) => {
-        const {lText,shape,color,font} = logoParts
-        if(shape == 'square'){
+    .then((Logo) => {
+        const {lText,shape,sColor,fColor} = Logo
+        
+        if(lText.length == 3){
+        fs.writeFile('logo.svg', 
+        `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
 
-        }else if(shape == 'circle'){
-
-        }else if(shape == 'triangle'){
-            
+        <${shape} cx="150" cy="100" r="80" fill="${sColor}" />
+      
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${fColor}">${lText}</text>
+      
+      </svg>`)            
+        }else{
+            console.log('Logo requires 3 letters')
         }
+        return Logo
     },
-    console.log(logoParts)
+    
     );
+    
+    console.log(Logo)
     module.exports = Logo;
