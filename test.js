@@ -2,20 +2,13 @@
 // expect shape to be true ex
 const logo = require('./index.js');
 
-describe("logo",() => {
-    describe('Instantiate',  () => {
-        it('should be an instance of Logo class', async () => {
-            const nLogo = await logo();
 
-            expect(nLogo).toBeInstanceOf(logo);
-        });
-    });
+describe("inquirer user inputs",() => {
 
-    describe('Initialize text', () => {
-        it('should set text properly', async () => {
-            const text = 'LPS';
-            const logo = await logo();
-            expect(logo.text).toEqual(text);
+    describe('test user input text', () => {
+        it('should equal LPS', () => {
+            logo.text = 'LPS'
+            expect(logo.text).toEqual();
         })
     })
 

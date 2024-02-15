@@ -1,5 +1,6 @@
 // if statements to make logos from the results of the questions (errors)
 // shapes:circle,square,triangle  colors, text, font
+
 const inquirer = require('inquirer')
 const fs = require('fs')
 
@@ -35,5 +36,5 @@ inquirer
         }else{
             console.log('Logo needs 3 letters')
         }
-        module.exports = logo; 
+        module.exports = logo;
     })
