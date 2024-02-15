@@ -1,37 +1,45 @@
 // test for existances of the different options and if they work
 // expect shape to be true ex
- const Logo = require('./index.js');
+const logo = require('./index.js');
 
- describe("Logo-gen"), () => {
-   describe('Instantiate',()=>{
-    it('should be an instance of Logo class', () =>{
-        const logo = new Logo();
+describe("logo",() => {
+    describe('Instantiate',  () => {
+        it('should be an instance of Logo class', async () => {
+            const nLogo = await logo();
 
-        expect(logo).toBeInstanceOf(Logo);
+            expect(nLogo).toBeInstanceOf(logo);
+        });
     });
-   });
-   
-   describe('Initialize shape', () => {
-    it('should set shape properly', () => {
-        const shape = 'square';
-        const logo = new Logo(shape)
-        expect(logo.shape).toEqual(shape)
+
+    describe('Initialize text', () => {
+        it('should set text properly', async () => {
+            const text = 'LPS';
+            const logo = await logo();
+            expect(logo.text).toEqual(text);
+        })
+    })
+
+    describe('Initialize text', () => {
+        it('should set shape properly', async () => {
+            const tColor = 'yellow';
+            const logo = await logo();
+            expect(logo.tColor), toEqual(tColor);
+        })
+    })
+
+    describe('Initialize shape', () => {
+        it('should set shape properly', async () => {
+            const shape = 'circle';
+            const logo = await logo(shape);
+            expect(logo.shape).toEqual(shape);
+        });
     });
-   });
-    
-    const font = 'sans serif'
 
-    test("has a choice for shape", () =>{ 
-
-    })
-    test("has a choice for lText", () => { 
-        const lText = 'LPS';
-        expect(Logo.lText).toEqual(lText)
-    })
-    test("has a choice for color", () => {
-        const color = 'pink';
-        expect(Logo.color).toEqual(color)
-    })
-    test("has an instance font")
-    
- }
+    describe('Initialize shape', () => {
+        it('should set shape properly', async () => {
+            const sColor = 'pink';
+            const logo = await logo(shape);
+            expect(logo.sColor).toEqual(sColor);
+        });
+    });
+})
