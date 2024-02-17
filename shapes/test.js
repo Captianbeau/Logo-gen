@@ -66,17 +66,10 @@ describe('Circle',() => {
         });
     });
     describe('Proper width', () => {
-        it('should inherit text properly', async () => {
+        it('should inherit width properly', async () => {
             const width = '300'
             const circle = new Circle(width);
             expect(circle.width).toBe(width);
-        });
-    });
-    describe('Proper text', () => {
-        it('should inherit text properly', async () => {
-            const text = 'LPS'
-            const circle = new Circle('300','200','pink','white', text);
-            expect(circle.text).toBe(text);
         });
     });
     describe('Proper text', () => {
@@ -105,6 +98,29 @@ describe('Circle',() => {
             const r = '50'
             const circle = new Circle('300','200','pink','white', 'LPS','150','100',r);
             expect(circle.r).toBe(r);
+        });
+    });
+})
+describe('Square',() => {
+    describe('Instance', () => {
+        it('should be instance of Square', async () => {
+            const square = new Square();
+            expect(square).toBeInstanceOf(Square);
+        });
+    });
+    describe('Proper width', () => {
+        it('should inherit width properly', async () => {
+            const width = '300'
+            const square = new Square(width);
+            expect(square.width).toBe(width);
+        });
+    });
+
+    describe('Proper text', () => {
+        it('should inherit text properly', async () => {
+            const text = 'LPS'
+            const square = new Square('300','200','pink','white', text);
+            expect(square.text).toBe(text);
         });
     });
 })
