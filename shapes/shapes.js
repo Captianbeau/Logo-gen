@@ -19,9 +19,9 @@ constructor (cx, cy, r){
     this.r = r;
 }
  makeCircle (){
-    fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="${circle.cx}" cy="${circle.cy}" r="${circle.r}" fill="${shape.fill}" />
-    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
+    fs.writeFile(`<svg width="${Shape.width}" height="${Shape.height}" version="${Shape.version}" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="${Circle.cx}" cy="${Circle.cy}" r="${Circle.r}" fill="${Shape.fill}" />
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${Shape.tFill}">${Shape.text}</text> 
     </svg>`)
     }
 
@@ -34,9 +34,9 @@ class Square extends Shape{
         this.sHeight = sHeight;
     }
     makeSquare(){
-        fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
-        <rect x= "${square.x}" y= "${square.y}" width= "${square.sWidth}" height="${square.sHeight}" fill="${shape.fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
+        fs.writeFile(`<svg width="${Shape.width}" height="${Shape.height}" version="${Shape.version}" xmlns="http://www.w3.org/2000/svg">
+        <rect x= "${Square.x}" y= "${Square.y}" width= "${Square.sWidth}" height="${Square.sHeight}" fill="${Shape.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${Shape.tFill}">${Shape.text}</text> 
         </svg>`)
     }
 }
@@ -46,9 +46,9 @@ class Triangle extends Shape{
         this.points = points
     }
     makeTriangle(){
-        fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="${triangle.points} " fill="${shape.fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
+        fs.writeFile('logo.svg',`<svg width="${Shape.width}" height="${Shape.height}" version="${Shape.version}" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="${Triangle.points} " fill="${Shape.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${Shape.tFill}">${Shape.text}</text> 
         </svg>`)
     }
 }
