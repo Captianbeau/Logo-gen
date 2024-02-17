@@ -3,36 +3,57 @@
 const {Shape,Circle,Square,Triangle} = require('./shapes.js')
 
 
-describe("",() => {
+describe("Shape",() => {
 
-    describe('', () => {
-        it('', () => {
-            logo.text = ''
-            expect(logo.text).toEqual();
+    describe('Instance', () => {
+        it('should be an instance of Shape class', () => {
+           const shape = new Shape();
+            expect(shape).toBeInstanceOf(Shape);
         })
     })
 
-    describe('', () => {
-        it('', async () => {
-            const tColor = 'yellow';
-            const logo = await logo();
-            expect(logo.tColor), toEqual(tColor);
+    describe('Proper width', () => {
+        it('should set width properly', async () => {
+            const width = '300';
+            const shape = new Shape(width);
+            expect(shape.width), toBe(width);
         })
     })
 
-    describe('', () => {
-        it('should set shape properly', async () => {
-            const shape = 'circle';
-            const logo = await logo(shape);
-            expect(logo.shape).toEqual(shape);
+    describe('Proper height', () => {
+        it('should set height properly', async () => {
+            const height = '200';
+            const shape = new Shape(height);
+            expect(shape.height).toBe(height);
         });
     });
 
-    describe('', () => {
-        it('should set shape properly', async () => {
-            const sColor = 'pink';
-            const logo = await logo(shape);
-            expect(logo.sColor).toEqual(sColor);
+    describe('Proper fill', () => {
+        it('should set fill properly', async () => {
+            const fill = 'pink';
+            const shape = new Shape(fill);
+            expect(shape.fill).toBe(fill);
         });
     });
+    describe('Proper tFill (text fill)', () => {
+        it('should set tFill properly', async () => {
+            const tFill = 'white';
+            const shape = new Shape(tFill);
+            expect(shape.tFill).toBe(tFill);
+        });
+    });
+    describe('Proper text', () => {
+        it('should set text properly', async () => {
+            const text = 'LPS';
+            const shape = new Shape(text);
+            expect(shape.text).toBe(text);
+        });
+    });
+    // describe('', () => {
+    //     it('', async () => {
+    //         const  = '';
+    //         const shape = new Shape();
+    //         expect().toBe();
+    //     });
+    // });
 })
