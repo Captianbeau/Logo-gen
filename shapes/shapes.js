@@ -1,12 +1,12 @@
 //circle rectangle triangle
 const fs = require(fs)
 class Shape  {
-    constructor (width, height, version, fill, stroke,tFill, text){
+    constructor (width, height, version, fill,tFill, text){
     this.width = width;
     this.height = height;
     this.version = version;
     this.fill = fill;
-    this.stroke = stroke;
+    
     this.tFill = tFill;
     this.text =text;
 }
@@ -19,7 +19,10 @@ constructor (cx, cy, r){
     this.r = r;
 }
  makeCircle (){
-
+    fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="${circle.cx}" cy="${circle.cy}" r="${circle.r}" fill="${shape.fill}" />
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
+    </svg>`)
     }
 
 }
@@ -32,8 +35,8 @@ class Square extends Shape{
     }
     makeSquare(){
         fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
-        <rect x= "${square.x}" y= "${square.y}" width= "${square.sWidth}" height="${square.sHeight}" stroke="${shape.stroke}" fill="${shape.fill}" stroke-width="5"/>
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill=>${shape.text}</text> 
+        <rect x= "${square.x}" y= "${square.y}" width= "${square.sWidth}" height="${square.sHeight}" fill="${shape.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
         </svg>`)
     }
 }
