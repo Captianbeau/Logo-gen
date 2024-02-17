@@ -46,7 +46,10 @@ class Triangle extends Shape{
         this.points = points
     }
     makeTriangle(){
-
+        fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="${triangle.points} " fill="${shape.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${shape.tFill}">${shape.text}</text> 
+        </svg>`)
     }
 }
 module.exports= {
