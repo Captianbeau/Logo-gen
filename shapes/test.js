@@ -1,6 +1,6 @@
 // test for existances of the different options and if they work
 // expect shape to be true ex
-const logo = require('./index.js');
+
 
 
 describe("inquirer user inputs",() => {

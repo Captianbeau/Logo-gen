@@ -2,7 +2,7 @@
 // shapes:circle,square,triangle  colors, text, font
 
 const inquirer = require('inquirer')
-const fs = require('fs')
+
 
 inquirer
     .prompt([
@@ -38,3 +38,4 @@ inquirer
         }
         module.exports = logo;
     })
+    //shape class -extends with the individual shapes needed shape js to test
