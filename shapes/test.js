@@ -86,4 +86,25 @@ describe('Circle',() => {
             expect(circle.text).toBe(text);
         });
     });
+    describe('Proper cx (shape center x position)', () => {
+        it('should inherit cx properly', async () => {
+            const cx = '150'
+            const circle = new Circle('300','200','pink','white', 'LPS',cx);
+            expect(circle.cx).toBe(cx);
+        });
+    });
+    describe('Proper cy (shape center y position)', () => {
+        it('should inherit cy properly', async () => {
+            const cy = '100'
+            const circle = new Circle('300','200','pink','white', 'LPS','150',cy);
+            expect(circle.cy).toBe(cy);
+        });
+    });
+    describe('Proper r (shape radius)', () => {
+        it('should inherit r properly', async () => {
+            const r = '50'
+            const circle = new Circle('300','200','pink','white', 'LPS','150','100',r);
+            expect(circle.r).toBe(r);
+        });
+    });
 })

@@ -35,9 +35,9 @@ class Square extends Shape {
         this.sHeight = sHeight;
     }
     makeLogo() {
-        fs.writeFile(`<svg width="${Shape.width}" height="${Shape.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect x= "${Square.x}" y= "${Square.y}" width= "${Square.sWidth}" height="${Square.sHeight}" fill="${Shape.fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${Shape.tFill}">${Shape.text}</text> 
+        fs.writeFile(`<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect x= "${x}" y= "${y}" width= "${sWidth}" height="${sHeight}" fill="${fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${tFill}">${text}</text> 
         </svg>`)
     }
 }
@@ -48,9 +48,9 @@ class Triangle extends Shape {
         this.points = points
     }
     makeLogo() {
-        fs.writeFile('logo.svg', `<svg width="${Shape.width}" height="${Shape.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="${Triangle.points} " fill="${Shape.fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${Shape.tFill}">${Shape.text}</text> 
+        fs.writeFile('logo.svg', `<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="${points} " fill="${fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${tFill}">${text}</text> 
         </svg>`)
     }
 }
