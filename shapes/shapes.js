@@ -1,13 +1,14 @@
 //circle rectangle triangle
 const fs = require(fs)
 class Shape  {
-    constructor (width, height, version, fill, stroke,tFill){
+    constructor (width, height, version, fill, stroke,tFill, text){
     this.width = width;
     this.height = height;
     this.version = version;
     this.fill = fill;
     this.stroke = stroke;
     this.tFill = tFill;
+    this.text =text;
 }
 }
 class Circle extends Shape{
@@ -30,9 +31,10 @@ class Square extends Shape{
         this.sHeight = sHeight;
     }
     makeSquare(){
-        fs.writeFile(`<svg width= height= version= xmlns="http://www.w3.org/2000/svg">
-        <rect x= y= width= height= stroke= fill= stroke-width="5"/>
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill=></text> `)
+        fs.writeFile(`<svg width="${shape.width}" height="${shape.height}" version="${shape.version}" xmlns="http://www.w3.org/2000/svg">
+        <rect x= "${square.x}" y= "${square.y}" width= "${square.sWidth}" height="${square.sHeight}" stroke="${shape.stroke}" fill="${shape.fill}" stroke-width="5"/>
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill=>${shape.text}</text> 
+        </svg>`)
     }
 }
 //points="220,10 325,210 120,210 "
@@ -43,4 +45,10 @@ class Triangle extends Shape{
     makeTriangle(){
 
     }
+}
+module.exports= {
+    Shape, 
+    Square,
+    Circle,
+    Triangle,
 }
