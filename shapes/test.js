@@ -3,24 +3,24 @@
 
 
 
-describe("inquirer user inputs",() => {
+describe("",() => {
 
-    describe('test user input text', () => {
-        it('should equal LPS', () => {
-            logo.text = 'LPS'
+    describe('', () => {
+        it('', () => {
+            logo.text = ''
             expect(logo.text).toEqual();
         })
     })
 
-    describe('Initialize text', () => {
-        it('should set shape properly', async () => {
+    describe('', () => {
+        it('', async () => {
             const tColor = 'yellow';
             const logo = await logo();
             expect(logo.tColor), toEqual(tColor);
         })
     })
 
-    describe('Initialize shape', () => {
+    describe('', () => {
         it('should set shape properly', async () => {
             const shape = 'circle';
             const logo = await logo(shape);
@@ -28,7 +28,7 @@ describe("inquirer user inputs",() => {
         });
     });
 
-    describe('Initialize shape', () => {
+    describe('', () => {
         it('should set shape properly', async () => {
             const sColor = 'pink';
             const logo = await logo(shape);
