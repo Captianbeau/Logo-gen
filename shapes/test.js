@@ -152,3 +152,26 @@ describe('Square',() => {
         });
     });
 })
+describe('Triangle',() => {
+    describe('Instance', () => {
+        it('should be instance of Triangle', async () => {
+            const triangle = new Triangle();
+            expect(triangle).toBeInstanceOf(Triangle);
+        });
+    });
+    describe('Proper width', () => {
+        it('should inherit width properly', async () => {
+            const width = '300'
+            const triangle = new Triangle(width);
+            expect(triangle.width).toBe(width);
+        });
+    });
+
+    describe('Proper text', () => {
+        it('should inherit text properly', async () => {
+            const text = 'LPS'
+            const triangle = new Triangle('300','200','pink','white', text);
+            expect(triangle.text).toBe(text);
+        });
+    });
+})
