@@ -19,7 +19,7 @@ class Circle extends Shape {
         this.r = r;
     }
     makeLogo() {
-        fs.writeFile(`<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        fs.writeFile('logo.svg',`<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <circle cx="${cx}" cy="${cy}" r="${r}" fill="${fill}" />
     <text x="150" y="125" font-size="60" text-anchor="middle" fill="${tFill}">${text}</text> 
     </svg>`)
@@ -35,9 +35,9 @@ class Square extends Shape {
         this.sHeight = sHeight;
     }
     makeLogo() {
-        fs.writeFile(`<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect x= "${x}" y= "${y}" width= "${sWidth}" height="${sHeight}" fill="${fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${tFill}">${text}</text> 
+        fs.writeFile('logo.svg',`<svg width="${this.width}" height="${this.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect x= "${this.x}" y= "${this.y}" width= "${this.sWidth}" height="${this.sHeight}" fill="${this.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.tFill}">${this.text}</text> 
         </svg>`)
     }
 }
@@ -48,9 +48,9 @@ class Triangle extends Shape {
         this.points = points
     }
     makeLogo() {
-        fs.writeFile('logo.svg', `<svg width="${width}" height="${height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="${points} " fill="${fill}" />
-        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${tFill}">${text}</text> 
+        fs.writeFile('logo.svg', `<svg width="${this.width}" height="${this.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="${this.points} " fill="${this.fill}" />
+        <text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.tFill}">${this.text}</text> 
         </svg>`)
     }
 }
