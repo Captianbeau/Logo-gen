@@ -3,6 +3,7 @@
 
 const inquirer = require('inquirer')
 const {Circle, Square, Triangle} = require('./shapes/shapes')
+const fs = require('fs')
 
 inquirer
     .prompt([
@@ -31,21 +32,21 @@ inquirer
     .then((logo) => {
 
         const{text, tFill, shape, fill} = logo;
-        
+
         if(text.length == 3){
             switch (shape) {
-                case 'circle':{
+                case 'circle':
                     const circle = new Circle('300','200',fill,tFill,text,'150','100','50');
                     circle.makeLogo();
-                }
-                case 'square':{
+                break;
+                case 'square':
                     const square = new Square('300','200',fill,tFill,text, '100','67','100','100');
                     square.makeLogo()
-                }
-                case 'triangle':{
+                break;
+                case 'triangle':
                     const triangle = new Triangle('300','200',fill,tFill,text,'150,67 100,134 200,134');
                     triangle.makeLogo();
-                }
+                
             }
         }else{
             console.log('Logo needs 3 letters')
