@@ -123,4 +123,32 @@ describe('Square',() => {
             expect(square.text).toBe(text);
         });
     });
+    describe('Proper x', () => {
+        it('should inherit x properly', async () => {
+            const x = '100'
+            const square = new Square('300','200','pink','white', 'LPS',x);
+            expect(square.x).toBe(x);
+        });
+    });
+    describe('Proper y', () => {
+        it('should inherit y properly', async () => {
+            const y = '100'
+            const square = new Square('300','200','pink','white', 'LPS','100',y);
+            expect(square.y).toBe(y);
+        });
+    });
+    describe('Proper sWidth', () => {
+        it('should inherit sWidth properly', async () => {
+            const sWidth = '100'
+            const square = new Square('300','200','pink','white', 'LPS','100','100',sWidth);
+            expect(square.sWidth).toBe(sWidth);
+        });
+    });
+    describe('Proper sHeight', () => {
+        it('should inherit sHeight properly', async () => {
+            const sHeight = '100'
+            const square = new Square('300','200','pink','white', 'LPS','100','100','100',sHeight);
+            expect(square.sHeight).toBe(sHeight);
+        });
+    });
 })
