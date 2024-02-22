@@ -12,10 +12,10 @@ Coming up with a logo is difficult, they need to be readable and stylish. Findin
 
 ## Installation 
 
-Download the git repository application requires node, inquirer and jest
+Download the git repository. Application requires node, inquirer and jest
 
 ## Usage 
-
+[Video Tutorial](https://drive.google.com/file/d/1YDACAzNy8v0ZuCWVnJsFkHXEvphaK-Ug/view?usp=sharing)
 In the console type node index and answer the prompts for your unique logo.  The prompts are:
  - Type 3 letters for your logo.
  - Type a color for your logo.
