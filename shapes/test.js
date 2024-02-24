@@ -104,6 +104,13 @@ describe('Circle', () => {
             expect(circle.r).toBe(r);
         });
     });
+
+    describe('Render data', () => {
+        it('should render circle data', async () => {
+            const circle = new Circle('300', '200', 'pink', 'white', 'LPS', '150', '100', '50');
+            expect(circle.renderCircle()).toBe(`<circle cx="150" cy="100" r="50" fill="pink" />`);
+        });
+    });
 })
 //Circle end
 
@@ -166,6 +173,13 @@ describe('Square', () => {
             expect(square.sHeight).toBe(sHeight);
         });
     });
+
+    describe('Render data', () => {
+        it('should render square data', async () => {
+            const square = new Square('300', '200', 'pink', 'white', 'LPS', '100', '100', '100', '100');
+            expect(square.renderSquare()).toBe( `<rect x= "100" y= "100" width= "100" height="100" fill="pink" />`);
+        });
+    });
 })
 //Square end
 
@@ -202,6 +216,12 @@ describe('Triangle', () => {
             const points = '220,10 325,210 120,210'
             const triangle = new Triangle('300', '200', 'pink', 'white', 'LPS', points);
             expect(triangle.points).toBe(points);
+        });
+    });
+    describe('Render data', () => {
+        it('should render triangle data', async () => {
+            const triangle = new Triangle('300', '200', 'pink', 'white', 'LPS', '220,10 325,210 120,210');
+            expect(triangle.renderTriangle()).toBe(`<polygon points="220,10 325,210 120,210 " fill="pink" />`);
         });
     });
 })

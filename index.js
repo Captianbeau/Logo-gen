@@ -1,6 +1,7 @@
 
-const inquirer = require('inquirer')
-const {Circle, Square, Triangle} = require('./shapes/shapes')
+const inquirer = require('inquirer');
+const {Circle, Square, Triangle} = require('./shapes/shapes');
+const fs = require('fs');
 
 inquirer
     .prompt([

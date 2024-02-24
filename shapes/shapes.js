@@ -22,6 +22,9 @@ class Circle extends Shape {
         this.cy = cy;
         this.r = r;
     }
+    renderCircle(){
+        return `<circle cx="${this.cx}" cy="${this.cy}" r="${this.r}" fill="${this.fill}" />`
+    }
 
     makeLogo() {
         fs.writeFileSync('logo.svg',`<svg width="${this.width}" height="${this.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -42,6 +45,9 @@ class Square extends Shape {
         this.sWidth = sWidth;
         this.sHeight = sHeight;
     }
+    renderSquare(){
+       return `<rect x= "${this.x}" y= "${this.y}" width= "${this.sWidth}" height="${this.sHeight}" fill="${this.fill}" />`
+    }
      makeLogo() {
          fs.writeFileSync('logo.svg',`<svg width="${this.width}" height="${this.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect x= "${this.x}" y= "${this.y}" width= "${this.sWidth}" height="${this.sHeight}" fill="${this.fill}" />
@@ -57,6 +63,9 @@ class Triangle extends Shape {
 
         //triangles need three points format: '0,0 1,1 2,2'
         this.points = points
+    }
+    renderTriangle(){
+        return `<polygon points="${this.points} " fill="${this.fill}" />`
     }
     makeLogo() {
         return fs.writeFileSync('logo.svg', `<svg width="${this.width}" height="${this.height}" version="1.1" xmlns="http://www.w3.org/2000/svg">
